@@ -73,7 +73,7 @@ const COMPONENTS: Component[] = [
     title: 'Managed Identity',
     icon: <KeyRound size={18} />,
     text: 'La Azure Function utiliza su Managed Identity para autenticarse como carga de trabajo frente a los servicios de Azure y Microsoft Foundry.',
-    note: 'Esta identidad representa al backend, no al usuario final.'
+    note: 'Esta identidad representa al backend, no al usuario final. Para consultar los Fabric Data Agents (que no admiten Managed Identity) se usa un service principal por dominio con certificado en Key Vault.'
   },
   {
     n: 7,

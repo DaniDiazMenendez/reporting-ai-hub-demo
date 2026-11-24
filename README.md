@@ -62,7 +62,9 @@ Validar sesión y expiración, reconstruir permisos, detectar dominio de la preg
 
 ## 9. Uso de Managed Identity
 
-La Function usa una Managed Identity para Foundry y Fabric, sin secretos en código. Debe tener **mínimo privilegio**: solo los workspaces/agentes necesarios, idealmente una identidad por dominio.
+La Function usa su Managed Identity para Foundry, Key Vault y Application Insights, sin secretos en código. **Los Fabric Data Agents no admiten Managed Identity**: para consultarlos se usa **un service principal por dominio** (certificado en Key Vault) con mínimo privilegio, solo sobre el workspace y las fuentes de ese dominio.
+
+> 📘 **Guía para el partner:** la arquitectura de conexión detallada (Data Agent → Foundry → Azure Function → Hub), paso a paso, está en [docs/GUIA-PARTNER-ARQUITECTURA.md](docs/GUIA-PARTNER-ARQUITECTURA.md).
 
 ## 10. Uso de Microsoft Foundry
 
